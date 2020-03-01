@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-    
+    <menu-component />
     <tour-items :title="tour.title" :items="tour.items"/>
     <form-component />
   </div>
 </template>
 
 <script>
+import MenuComponent from './components/MenuComponent.vue'
 import TourItems from './components/TourItems.vue'
 import FormComponent from './components/FormComponent.vue'
 
@@ -14,6 +15,7 @@ import FormComponent from './components/FormComponent.vue'
 export default {
   name: 'App',
   components: {
+    MenuComponent,
     TourItems,
     FormComponent,
   },
