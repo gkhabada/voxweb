@@ -1,0 +1,234 @@
+.form {
+  margin-top: 10px;
+  max-width: 780px;
+  margin: 0 auto 164px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__required {
+    color: #CB0037;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 43px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &_title {
+      margin-bottom: 31px;
+      width: 100%;
+
+      span {
+        font-size: 10px;
+        line-height: 12px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #000;
+      }
+    }
+
+    .form__field {
+      display: inline-block;
+      width: calc(50% - 10px);
+      margin-bottom: 17px;
+
+      &_label {
+        text-transform: uppercase;
+        font-size: 10px;
+        line-height: 12px;
+      }
+
+      &_input {
+        background: #FFFFFF;
+        border: 1px solid #E7E7E7;
+        width: 100%;
+        height: 50px;
+        border-radius: 3px;
+        margin: 8px 0 9px;
+        padding-left: 30px;
+        box-sizing: border-box;
+        font-size: 10px;
+        line-height: 12px;
+      }
+
+      &--error-text {
+        font-size: 10px;
+        line-height: 12px;
+        color: #CB0037;
+        opacity: 0;
+      }
+    }
+
+    .form__field--error {
+      .form__field_input {
+        border-color: #CB0037;
+      }
+      .form__field--error-text {
+        opacity: 1;
+      }
+    }
+
+    .form__checkbox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      width: 80px;
+      margin-bottom: 40px;
+
+      .form__checkbox_item {
+        opacity: 0;
+      }
+
+      .form__field_label {
+        font-size: 10px;
+        line-height: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        position: relative;
+        padding-bottom: 50px;
+        user-select: none;
+
+
+
+        img {
+          position: absolute;
+          bottom: 17px;
+          z-index: 2;
+          left: calc(50% - 9.5px);
+          opacity: 0;
+        }
+
+        &:after {
+          content: '';
+          width: 40px;
+          height: 40px;
+          background-color: #FFFFFF;
+          border: 1px solid #E7E7E7;
+          box-sizing: border-box;
+          border-radius: 3px;
+          position: absolute;
+          bottom: 0;
+          left: calc(50% - 20px);
+        }
+      }
+
+      .form__checkbox_item:checked ~ .form__field_label img {
+        opacity: 1;
+      }
+
+      .form__checkbox_item:focus ~ .form__field_label:after {
+        outline: 1px solid #4cbffd;
+      }
+
+
+    }
+
+  }
+
+  .checkboxs {
+    width: calc(50% - 10px);
+    justify-content: center;
+  }
+
+  &__agree {
+    margin-bottom: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &:last-child {
+      margin-bottom: 33px;
+    }
+
+    &_checkbox {
+      position: absolute;
+      opacity: 0;
+    }
+
+    &_label {
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 12px;
+      position: relative;
+
+      img {
+        position: absolute;
+        z-index: 2;
+        left: -27px;
+        width: 9px;
+        height: 4px;
+        top: 0;
+        opacity: 0;
+      }
+
+      &:after {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: #FFFFFF;
+        border: 1px solid #E7E7E7;
+        box-sizing: border-box;
+        border-radius: 3px;
+        position: absolute;
+        left: -30px;
+      }
+    }
+
+    &_checkbox:checked ~ &_label img {
+      opacity: 1;
+    }
+
+    &_item:focus ~ &_label:after {
+      outline: 1px solid #4cbffd;
+    }
+
+    &_text {
+      font-size: 10px;
+      line-height: 12px;
+      color: #C1C1C1;
+      margin-top: 11px;
+      margin-bottom: 0;
+      font-weight: 300;
+    }
+  }
+
+  &__required_text {
+    padding-left: 30px;
+    font-size: 10px;
+    line-height: 12px;
+    color: #C1C1C1;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    width: 280px;
+    padding: 17px 30px;
+    display: flex;
+    justify-content: space-between;
+    background: #FFD241;
+    border-radius: 29.5px;
+    transition: 0.3s;
+    border: 0;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken(#FFD241, 10%);
+    }
+
+    span {
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}
