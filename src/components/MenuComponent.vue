@@ -8,17 +8,45 @@
         <img src="@/assets/image/close.svg" alt="закрыть" class="menu__close" @click="menu = false">
 
         <div class="menu__buttons">
-          <button class="menu__buttons_country">
+          <button :class="['menu__buttons_country', {'open-select': country}]" @click="country = !country">
             <span>Страны</span>
             <img src="@/assets/image/arrow.svg" alt="Страны">
+            <div @click.stop="country = false" v-show="country">
+              <p>Активный</p>
+              <p>Майские</p>
+              <p>На авто</p>
+              <p>На корабле</p>
+              <p>Новый год</p>
+              <p>Поход</p>
+              <p>Серфингp</p>
+              <p>Эксклюзив</p>
+              <p>Экскурсионный</p>
+              <p>Экспедиция</p>
+            </div>
           </button>
+
           <button class="menu__buttons_date">
             <span>Даты</span>
             <img src="@/assets/image/arrow.svg" alt="Даты">
           </button>
-          <button class="menu__buttons_type">
+          <div class="menu__buttons_date--open">
+            <date-picker v-model="time" lang="ru" range ref="datepicker"></date-picker>
+          </div>
+          <button :class="['menu__buttons_type', {'open-select': type}]" @click="type = !type">
             <span>Тип путешествия</span>
             <img src="@/assets/image/arrow.svg" alt="Тип путешествия">
+            <div @click.stop="type = false" v-show="type">
+              <p>Активный</p>
+              <p>Майские</p>
+              <p>На авто</p>
+              <p>На корабле</p>
+              <p>Новый год</p>
+              <p>Поход</p>
+              <p>Серфингp</p>
+              <p>Эксклюзив</p>
+              <p>Экскурсионный</p>
+              <p>Экспедиция</p>
+            </div>
           </button>
           <a href="#" class="menu__button--outline">
             НАЙТИ
@@ -41,12 +69,24 @@
 </template>
 
 <script>
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
 
 export default {
   name: 'Menu',
+  components: { DatePicker },
   data () {
     return {
-      menu: false,
+      menu: true,
+      time: null,
+      type: false,
+      country: false,
+    }
+  },
+  methods: {
+    showDate () {
+      console.log(this.$refs.datepicker)
+      this.$refs.datepicker.$el
     }
   }
 }

@@ -76,4 +76,18 @@ export default {
   font-family: "MuseoSansCyrl", Arial, sans-serif;
 }
 
+//date time picker
+
+.mx-datepicker {
+  width: auto!important;
+}
+
+.mx-calendar.mx-calendar-panel-date:not(:first-child) {
+  display: none;
+}
+
+.mx-btn-icon-double-left, .mx-btn-icon-double-right {
+  display: none;
+}
+
 </style>
